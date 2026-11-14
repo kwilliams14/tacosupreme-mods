@@ -62,9 +62,10 @@ def report(manifest, updates, errors):
     if errors:
         lines += ["", "Some mods could not be checked:", *errors]
     lines += ["", "**Next steps**",
-              "1. Read the changelogs and update the server's `BepInEx/plugins` in AMP.",
-              "2. Send the server's new plugins folder to Claude to publish a new pack, update `mods/" + manifest["community"] + ".json` and refresh the site.",
-              "3. Close this issue.", "",
+              "1. Read the changelogs above.",
+              "2. Go to **Actions → Publish mod pack → Run workflow** (pin any mod you want to hold back).",
+              "3. That's it. The website updates right away, the server installs the pack at 5:00 AM Pacific, "
+              "and this issue closes itself.", "",
               f"<!-- updates:{','.join(u['name'] + '@' + u['latest'] for u in updates)} -->"]
     return "\n".join(lines)
 

@@ -1,6 +1,7 @@
 name: Publish mod pack
 
-# Run this AFTER the server's BepInEx/plugins have been updated in AMP.
+# This is the approval step. Publishing updates the website right away; the game
+# server picks up the new pack at 5:00 AM Pacific (see server/README.md).
 on:
   workflow_dispatch:
     inputs:
