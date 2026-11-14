@@ -1,6 +1,6 @@
 # Taco Supreme Mod Packs
 
-Mod packs for the Taco Supreme game servers. Install guide and server info: **https://play.tacosupreme.us**
+Mod packs for the Taco Supreme game servers. Install guide and server info: **https://games.tacosupreme.us**
 
 ## Valheim
 
