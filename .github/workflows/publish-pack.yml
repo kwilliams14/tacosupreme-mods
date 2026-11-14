@@ -1,0 +1,45 @@
+name: Publish mod pack
+
+# Run this AFTER the server's BepInEx/plugins have been updated in AMP.
+on:
+  workflow_dispatch:
+    inputs:
+      pins:
+        description: "Optional: hold mods at a version, e.g. Epic Loot=0.14.0, Ultimate QOL=1.0.10. Leave blank to use the latest of everything."
+        required: false
+        default: ""
+      dry_run:
+        description: "Test only: build the pack but don't publish it"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: publish-pack
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and publish the Valheim pack
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PINS: ${{ inputs.pins }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: python scripts/publish_pack.py
+      - name: Keep the test build for download
+        if: ${{ inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-pack
+          path: dist/TacoSupreme-Valheim-ModPack.zip
+          retention-days: 3

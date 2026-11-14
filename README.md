@@ -16,7 +16,13 @@ Each release lists the mods and versions it contains.
 
 A GitHub Action ([`mod-check.yml`](.github/workflows/mod-check.yml)) runs daily at 14:00 UTC. It compares the versions in [`mods/valheim.json`](mods/valheim.json) with the latest on Thunderstore. When something newer is out, it opens a **"Valheim mod updates available"** issue with changelog links and @mentions the owner, so GitHub sends a notification.
 
-After the server's mods are updated, a new pack is published, `mods/valheim.json` is bumped to the new versions, and the issue is closed.
+## Publishing a new pack
+
+1. Update the server's `BepInEx/plugins` in AMP to the new versions.
+2. Go to **Actions → Publish mod pack → Run workflow**. Leave it blank to use the latest of every mod, or hold a mod back with e.g. `Epic Loot=0.14.0`. Tick **Test only** to build a pack you can download without publishing it.
+3. The workflow downloads each mod from Thunderstore, builds `TacoSupreme-Valheim-ModPack.zip` (one folder per mod), publishes a release, updates `mods/valheim.json` and closes the update issue.
+
+The website reads `mods/valheim.json`, so its download info and mod list update on their own.
 
 ## Minecraft
 
