@@ -3,10 +3,10 @@
   "community": "valheim",
   "notify": "kwilliams14",
   "pack": {
-    "release": "valheim-2026.11.14",
-    "version": "2026.11.14",
-    "date": "2026-11-14",
-    "size_bytes": 40334771,
+    "release": "valheim-2026.11.20",
+    "version": "2026.11.20",
+    "date": "2026-11-20",
+    "size_bytes": 40746035,
     "asset": "TacoSupreme-Valheim-ModPack.zip"
   },
   "mods": [
@@ -20,7 +20,7 @@
     {
       "name": "Ultimate QOL",
       "thunderstore": "Igao/Ultimate_QOL",
-      "installed": "1.0.12",
+      "installed": "1.0.14",
       "type": "Gameplay",
       "description": "A bundle of quality-of-life tweaks that smooth out everyday play."
     },
