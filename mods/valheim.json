@@ -3,10 +3,10 @@
   "community": "valheim",
   "notify": "kwilliams14",
   "pack": {
-    "release": "valheim-2026.11.20",
-    "version": "2026.11.20",
-    "date": "2026-11-20",
-    "size_bytes": 40746035,
+    "release": "valheim-2026.11.24",
+    "version": "2026.11.24",
+    "date": "2026-11-24",
+    "size_bytes": 41063586,
     "asset": "TacoSupreme-Valheim-ModPack.zip"
   },
   "mods": [
@@ -20,14 +20,14 @@
     {
       "name": "Ultimate QOL",
       "thunderstore": "Igao/Ultimate_QOL",
-      "installed": "1.0.14",
+      "installed": "1.0.16",
       "type": "Gameplay",
       "description": "A bundle of quality-of-life tweaks that smooth out everyday play."
     },
     {
       "name": "VAGhettoNetworking",
       "thunderstore": "VerdantsAscent/FiresGhettoNetworking",
-      "installed": "1.6.51",
+      "installed": "1.6.109",
       "type": "Performance",
       "description": "Raises network limits so the world stays in sync with several players on."
     },
